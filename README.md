@@ -19,3 +19,6 @@ HAVING calendar_year >= 1990;
 1. Start by listing out the columns that you want
 2. Which tables do I need? Get the aliases --> adjust the select statement
 3. Remember to use *HAVING* because *COUNT* is used and is an aggregate function
+
+### Problem 1 Visualisation
+![Picture1](https://user-images.githubusercontent.com/90490472/180726559-b9b30781-f2da-4798-937b-3dc65f556a82.png)
