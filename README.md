@@ -4,15 +4,15 @@ Udemy's The Business Intelligence Analyst Course 2022
 # Combining SQL and Tableau exercise
 ## Problem 1: Create a visualization that provides a breakdown between the male and female employees working in the company each year, starting from 1990. 
 
-SELECT 
-    YEAR(de.from_date) AS Calendar_year,
-    e.gender,
-    COUNT(e.emp_no) AS num_of_employees
-FROM
-    t_employees e
-        JOIN
-    t_dept_emp de ON de.emp_no = e.emp_no
-GROUP BY calendar_year , e.gender
+SELECT<br/>
+    YEAR(de.from_date) AS Calendar_year,<br/>
+    e.gender,<br/>
+    COUNT(e.emp_no) AS num_of_employees<br/>
+FROM<br/>
+    t_employees e<br/>
+        JOIN<br/>
+    t_dept_emp de ON de.emp_no = e.emp_no<br/>
+GROUP BY calendar_year , e.gender<br/>
 HAVING calendar_year >= 1990;
 
 **Things to remember**
