@@ -53,3 +53,6 @@ FROM <br/>
         JOIN <br/>
     t_employees ee ON dm.emp_no = ee.emp_no <br/>
 ORDER BY ee.emp_no AND e.calendar_year; <br/>
+
+### Problem 2 Visualisation
+![Picture1](https://user-images.githubusercontent.com/90490472/180970655-bb8f966e-30e2-4d83-96fa-8e656b17d5f4.png)
