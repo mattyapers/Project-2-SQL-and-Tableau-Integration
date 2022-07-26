@@ -25,31 +25,31 @@ HAVING calendar_year >= 1990;
 
 ## Problem 2: Compare the number of male managers to the number of female managers from different departments for each year, starting from 1990
 
-SELECT  
-    d.dept_no,
-    ee.gender,
-    dm.emp_no,
-    dm.from_date,
-    dm.to_date,
-    e.calendar_year,
-    CASE
-        WHEN
-            YEAR(dm.to_date) >= e.calendar_year
-                AND YEAR(dm.from_date) <= e.calendar_year
-        THEN
-            1
-        ELSE 0
-    END AS active
-FROM
-    (SELECT 
-        YEAR(hire_date) AS calendar_year
-    FROM
-        t_employees
-	GROUP BY calendar_year) e
-        CROSS JOIN
-    t_dept_manager dm
-        JOIN
-    t_departments d ON dm.dept_no = d.dept_no
-        JOIN
-    t_employees ee ON dm.emp_no = ee.emp_no
-ORDER BY ee.emp_no AND e.calendar_year;
+SELECT<br/>
+    d.dept_no, <br/>
+    ee.gender, <br/>
+    dm.emp_no, <br/>
+    dm.from_date, <br/>
+    dm.to_date, <br/>
+    e.calendar_year, <br/>
+    CASE<br/>
+        WHEN <br/>
+            YEAR(dm.to_date) >= e.calendar_year <br/>
+                AND YEAR(dm.from_date) <= e.calendar_year <br/>
+        THEN <br/>
+            1 <br/>
+        ELSE 0 <br/>
+    END AS active <br/>
+FROM <br/>
+    (SELECT <br/> 
+        YEAR(hire_date) AS calendar_year <br/>
+    FROM <br/>
+        t_employees <br/>
+	GROUP BY calendar_year) e <br/>
+        CROSS JOIN <br/>
+    t_dept_manager dm <br/>
+        JOIN <br/>
+    t_departments d ON dm.dept_no = d.dept_no <br/>
+        JOIN <br/>
+    t_employees ee ON dm.emp_no = ee.emp_no <br/>
+ORDER BY ee.emp_no AND e.calendar_year; <br/>
