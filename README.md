@@ -56,3 +56,5 @@ ORDER BY ee.emp_no AND e.calendar_year; <br/>
 
 ### Problem 2 Visualisation
 ![Picture1](https://user-images.githubusercontent.com/90490472/180970655-bb8f966e-30e2-4d83-96fa-8e656b17d5f4.png)
+
+## Problem 3: Compare the average salary of female versus male employees in the entire company until year 2002, and add a filter allowing you to see that per each department.
