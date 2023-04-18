@@ -27,6 +27,7 @@ HAVING calendar_year >= 1990;
 
 ## Problem 2: Compare the number of male managers to the number of female managers from different departments for each year, starting from 1990
 
+```SQL
 SELECT<br/>
     d.dept_no, <br/>
     ee.gender, <br/>
@@ -55,6 +56,7 @@ FROM <br/>
         JOIN <br/>
     t_employees ee ON dm.emp_no = ee.emp_no <br/>
 ORDER BY ee.emp_no AND e.calendar_year; <br/>
+```
 
 ### Problem 2 Visualisation
 ![Picture1](https://user-images.githubusercontent.com/90490472/180970655-bb8f966e-30e2-4d83-96fa-8e656b17d5f4.png)
