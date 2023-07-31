@@ -1,19 +1,17 @@
-# The-Business-Intelligence-Analyst-Course-2022
-Udemy's The Business Intelligence Analyst Course 2022
-
+# WIP
 # Combining SQL and Tableau exercise
 ## Problem 1: Create a visualization that provides a breakdown between the male and female employees working in the company each year, starting from 1990. 
 
 ```SQL
-SELECT<br/>
-    YEAR(de.from_date) AS Calendar_year,<br/>
-    e.gender,<br/>
-    COUNT(e.emp_no) AS num_of_employees<br/>
-FROM<br/>
-    t_employees e<br/>
-        JOIN<br/>
-    t_dept_emp de ON de.emp_no = e.emp_no<br/>
-GROUP BY calendar_year , e.gender<br/>
+SELECT
+    YEAR(de.from_date) AS Calendar_year,
+    e.gender,
+    COUNT(e.emp_no) AS num_of_employees
+FROM
+    t_employees e
+        JOIN
+    t_dept_emp de ON de.emp_no = e.emp_no
+GROUP BY calendar_year , e.gender
 HAVING calendar_year >= 1990;
 ```
 
@@ -29,33 +27,33 @@ HAVING calendar_year >= 1990;
 
 ```SQL
 SELECT<br/>
-    d.dept_no, <br/>
-    ee.gender, <br/>
-    dm.emp_no, <br/>
-    dm.from_date, <br/>
-    dm.to_date, <br/>
-    e.calendar_year, <br/>
-    CASE<br/>
-        WHEN <br/>
-            YEAR(dm.to_date) >= e.calendar_year <br/>
-                AND YEAR(dm.from_date) <= e.calendar_year <br/>
-        THEN <br/>
-            1 <br/>
-        ELSE 0 <br/>
-    END AS active <br/>
-FROM <br/>
-    (SELECT <br/> 
-        YEAR(hire_date) AS calendar_year <br/>
-    FROM <br/>
-        t_employees <br/>
-	GROUP BY calendar_year) e <br/>
-        CROSS JOIN <br/>
-    t_dept_manager dm <br/>
-        JOIN <br/>
-    t_departments d ON dm.dept_no = d.dept_no <br/>
-        JOIN <br/>
-    t_employees ee ON dm.emp_no = ee.emp_no <br/>
-ORDER BY ee.emp_no AND e.calendar_year; <br/>
+    d.dept_no, 
+    ee.gender, 
+    dm.emp_no, 
+    dm.from_date, 
+    dm.to_date, 
+    e.calendar_year, 
+    CASE
+        WHEN
+            YEAR(dm.to_date) >= e.calendar_year 
+                AND YEAR(dm.from_date) <= e.calendar_year 
+        THEN 
+            1 
+        ELSE 0 
+    END AS active 
+FROM 
+    (SELECT 
+        YEAR(hire_date) AS calendar_year <
+    FROM 
+        t_employees 
+	GROUP BY calendar_year) e 
+        CROSS JOIN 
+    t_dept_manager dm 
+        JOIN 
+    t_departments d ON dm.dept_no = d.dept_no 
+        JOIN 
+    t_employees ee ON dm.emp_no = ee.emp_no 
+ORDER BY ee.emp_no AND e.calendar_year; 
 ```
 
 ### Problem 2 Visualisation
