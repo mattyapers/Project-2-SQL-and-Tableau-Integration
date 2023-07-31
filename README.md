@@ -26,7 +26,7 @@ HAVING calendar_year >= 1990;
 ## Problem 2: Compare the number of male managers to the number of female managers from different departments for each year, starting from 1990
 
 ```SQL
-SELECT<br/>
+SELECT
     d.dept_no, 
     ee.gender, 
     dm.emp_no, 
